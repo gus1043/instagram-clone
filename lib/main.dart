@@ -26,28 +26,23 @@ class MyApp extends StatelessWidget {
                   iconSize: 30)
                 ],
       ),
-      body: Container(
-        child:ListTile(
-          leading: FlutterLogo(size: 72.0),
-          title: Text('Three-line ListTile'),
-          subtitle:
-          Text('A sufficiently long subtitle warrants three lines.'),
-          trailing: Icon(Icons.more_vert),
-          isThreeLine: true,
+      body: Theme(
+        data: ThemeData(
+          textTheme:TextTheme(bodyText1: black)
         ),
+        child: Container(),
       ),
-      bottomNavigationBar: BottomAppBar(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Icon(Icons.home),
-            Icon(Icons.search),
-            Icon(Icons.movie),
-            Icon(Icons.shop),
-            Icon(Icons.account_circle)
+      bottomNavigationBar: BottomNavigationBar(
+        showUnselectedLabels: false,
+        showSelectedLabels: false,
+          items: [
+            BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: '흠'),
+            BottomNavigationBarItem(icon: Icon(Icons.search), label: '1'),
+            BottomNavigationBarItem(icon: Icon(Icons.movie), label: '2'),
+            BottomNavigationBarItem(icon: Icon(Icons.shopping_bag_outlined), label: '3'),
+            BottomNavigationBarItem(icon: Icon(Icons.account_circle), label: '4'),
           ],
         ),
-      ),
     );
   }
 }
